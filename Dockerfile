@@ -12,12 +12,13 @@ RUN pip install -U pip \
   && apt-get autoremove -y \
   && apt-get clean -y \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-  && mkdir /site /public
+
+RUN mkdir /site /public
+
+WORKDIR /site
 
 VOLUME /site
 VOLUME /public
-
-WORKDIR /site
 
 EXPOSE 1313
 
