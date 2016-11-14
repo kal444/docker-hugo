@@ -12,6 +12,7 @@ RUN pip install -U pip \
   && apt-get autoremove -y \
   && apt-get clean -y \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+  && mkdir /site /public
 
 VOLUME /site
 VOLUME /public
