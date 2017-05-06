@@ -1,7 +1,7 @@
 FROM python:3
 MAINTAINER Kyle Huang <kyle@yellowaxe.com>
 
-ENV HUGO_VERSION=0.18.1
+ENV HUGO_VERSION=0.20.7
 ENV HUGO_DOWNLOAD=https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}-64bit.deb
 
 RUN apt-get update && apt-get install -y --no-install-recommends rsync \
