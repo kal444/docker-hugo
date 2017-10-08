@@ -1,4 +1,4 @@
-FROM debian:jessie-slim
+FROM buildpack-deps:jessie-scm
 MAINTAINER Kyle Huang <kyle@yellowaxe.com>
 
 ENV HUGO_VERSION=0.29
