@@ -1,12 +1,10 @@
-FROM python:3
+FROM debian:jessie-slim
 MAINTAINER Kyle Huang <kyle@yellowaxe.com>
 
 ENV HUGO_VERSION=0.29
 ENV HUGO_DOWNLOAD=https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.deb
 
-RUN apt-get update && apt-get install -y --no-install-recommends rsync \
-  && pip install -U pip Pygments \
-  && wget ${HUGO_DOWNLOAD} -O /tmp/hugo.deb \
+RUN wget ${HUGO_DOWNLOAD} -O /tmp/hugo.deb \
   && dpkg -i /tmp/hugo.deb \
   && rm /tmp/hugo.deb \
   && apt-get autoremove -y \
